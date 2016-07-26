@@ -5,6 +5,8 @@
     (fn [f]
       (fn [x]
         ((apply comp (repeat n f)) x))))
+      
+(def num numeral)
         
 (lambda successor [m]
   (fn [f]
