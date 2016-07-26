@@ -6,8 +6,6 @@
       (fn [x]
         ((apply comp (repeat n f)) x))))
       
-(def num numeral)
-        
 (lambda successor [m]
   (fn [f]
     (fn [x]
@@ -21,5 +19,24 @@
 (lambda mult [m n]
   (fn [f]
     (m (n f))))
+  
+(lambda predecessor [n]
+        (fn [f]
+          (fn [x]
+            (((n 
+                (fn [g] (fn [h] (h (g f))))) 
+              (fn [u] x))
+             (fn [u] u)))))
+
+(lambda sub [m n]
+        ((n predecessor) m))
+
+(def num numeral)
+(def - sub)
+(def + add)
+(def * mult)
+(def dec predecessor)
+(def inc successor)
+
 
 
