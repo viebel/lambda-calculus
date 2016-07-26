@@ -24,7 +24,7 @@
 #_(defmacro lambda [name args & body]
   `(defn ~name ~args (Lambda. ~@body)))
 
-(lambda numeral [n]
+#_(lambda numeral [n]
     (fn [f]
       (fn [x]
         ((apply comp (repeat n f)) x))))
