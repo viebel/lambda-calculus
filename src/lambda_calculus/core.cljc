@@ -1,4 +1,4 @@
-(ns lambda-calulus.core)
+(ns lambda-calculus.core)
 
 (defn visual [x]
   (list 'f x))
