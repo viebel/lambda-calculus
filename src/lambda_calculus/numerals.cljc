@@ -31,11 +31,15 @@
 
 (lambda sub [m n]
         ((n predecessor) m))
+      
+(lambda exponent [m n]
+        (n m))
 
 (def num numeral)
 (def - sub)
 (def + add)
 (def * mult)
+(def ** exponent)
 (def dec predecessor)
 (def inc successor)
 
