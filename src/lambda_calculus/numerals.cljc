@@ -1,4 +1,5 @@
 (ns lambda-calculus.numerals
+  (:refer-clojure :exclude [+ - * inc dec])
   (:require-macros [lambda-calculus.macros :refer [lambda]]))
   
 (lambda numeral [n]
