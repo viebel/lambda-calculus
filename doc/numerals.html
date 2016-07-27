@@ -1,29 +1,32 @@
 <html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<head lang="en">
+<meta charset="UTF-8">
   <link rel="stylesheet" type="text/css" href="http://app.klipse.tech/css/codemirror.css">
-
 </head>
 
 <body>
-<pre>
-<code class="clojure" data-external-libs="https://raw.githubusercontent.com/viebel/lambda-calculus/master/src/">
+    <h1> Numerals </h1>
+<div class="clojure" data-external-libs="https://raw.githubusercontent.com/viebel/lambda-calculus/master/src/">
 ;https://github.com/viebel/lambda-calculus
 (ns my.me
   (:refer-clojure :exclude [+ - * inc dec])
     (:require-macros [lambda-calculus.macros :refer [lambda]])
       )
-</code>
-</pre>
+</div>
+<br/>
+<div class="clojure">
+    (num 8)
+    </div>
+    <br/>
 
+<h1> More... </h1>
 <!-- CONFIGURE KLIPSE -->
 <script>
     window.klipse_settings = {
         selector: '.clojure'
     };
 </script>
-<script src="http://app.klipse.tech/plugin_prod/js/klipse_plugin.min.js"></script>
+<script src="http://app.klipse.tech/plugin/js/klipse_plugin.js"></script>
 
 </body>
 
