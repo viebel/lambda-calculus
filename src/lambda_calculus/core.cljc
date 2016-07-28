@@ -19,7 +19,9 @@
 
   IFn
   (-invoke [this g]
-           (f g)))
+           (f g))
+  (-invoke [this g h]
+           ((f g) h))
 
 (defn view-bool [bool]
   ((bool "T") "F"))
@@ -34,4 +36,7 @@
           (= (view-bool this) (view-bool other)))
   IFn
   (-invoke [this g]
-           (f g)))
+           (f g))
+  (-invoke [this g h]
+           ((f g) h)))
+
