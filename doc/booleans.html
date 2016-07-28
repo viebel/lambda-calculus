@@ -15,7 +15,7 @@ https://raw.githubusercontent.com/viebel/gadjett/master/src/">
   (:require-macros [lambda-calculus.macros :refer [lambda-bool]]
                    [gadjett.macros :refer [disp]])
   (:require 
-    [lambda-calculus.booleans :refer [T F negation]]))
+    [lambda-calculus.booleans :refer [T F negation not conjunction and disjunction or]]))
 </div>
 <br/>
 
@@ -34,7 +34,17 @@ https://raw.githubusercontent.com/viebel/gadjett/master/src/">
     (= T F)
     </div>
 
-<h2> Negation (a.k.a not) truth table </h2>
+<h2> Negation a.k.a not </h2>
+
+You can use either <b>negation</b> or <b>not</b>.
+<br/>
+Here is the truth table:
+
+<div class="clojure">
+    (disp (negation T)
+          (negation F))
+    </div>
+    <br/>
 
 <div class="clojure">
     (disp (not T)
@@ -42,18 +52,35 @@ https://raw.githubusercontent.com/viebel/gadjett/master/src/">
     </div>
     <br/>
 
-<h2> Conjunction (a.k.a and) truth table </h2>
+<h2> Conjunction a.k.a and</h2>
+
+You can use either <b>conjunction</b> or <b>and</b>.
+<br/>
+Here is the truth table:
 
 <div class="clojure">
     (disp ((conjunction T) T)
       ((conjunction T) F)
       ((conjunction F) F)
       ((conjunction F) T))
-
+    </div>
+    <br/>
+    
+<div class="clojure">
+    (disp ((and T) T)
+      ((and T) F)
+      ((and F) F)
+      ((and F) T))
     </div>
     <br/>
 
-<h2> Disjunction (a.k.a and) truth table </h2>
+<h2> Disjunction a.k.a or  </h2>
+
+You can use either <b>disjunction</b> or <b>or</b>.
+
+<br/>
+
+Here is the truth table:
 
 <div class="clojure">
    (disp ((disjunction T) T)
@@ -63,6 +90,16 @@ https://raw.githubusercontent.com/viebel/gadjett/master/src/">
 
     </div>
     <br/>
+    
+    <div class="clojure">
+   (disp ((or T) T)
+      ((or T) F)
+      ((or F) F)
+      ((or F) T))
+
+    </div>
+    <br/>
+    
     
 <script>
     window.klipse_settings = {
