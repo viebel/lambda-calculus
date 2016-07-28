@@ -21,7 +21,7 @@
   (-invoke [this g]
            (f g))
   (-invoke [this g h]
-           ((f g) h))
+           ((f g) h)))
 
 (defn view-bool [bool]
   ((bool "T") "F"))
