@@ -7,65 +7,42 @@
 
 <body>
     <h1> Booleans </h1>
-<div class="clojure" data-external-libs="https://raw.githubusercontent.com/viebel/lambda-calculus/master/src/">
+<div class="clojure" data-external-libs="https://raw.githubusercontent.com/viebel/lambda-calculus/master/src/,
+https://raw.githubusercontent.com/viebel/gadjett/master/src/">
 ;https://github.com/viebel/lambda-calculus
 (ns demo.lambda
   (:refer-clojure :exclude [+ - * inc dec])
   (:require-macros [lambda-calculus.macros :refer [lambda-bool]])
   (:require 
+    [gadjett.macros :refer [disp]]
     [lambda-calculus.booleans :refer [T F negation]]))
 </div>
 <br/>
 
 <p>A boolean <b>n</b> is viewed as either <b>T</b> or <b>F</b>:</p>
 <div class="clojure">
-    (num 8)
+    [T F T T F]
     </div>
     <br/>
     
 <h2> Comparison</h2>
 <div class="clojure">
-    (= (num 8) (num 8))
+    (= T T)
     </div>
 
 <div class="clojure">
-    (= (num 3) (num 8))
+    (= T F)
     </div>
 
-<h2> Incrementaion </h2>
+<h2> Negation (a.k.a not) </h2>
 <div class="clojure">
-    (inc (num 8))
+    (negation T)
     </div>
     <br/>
 <div class="clojure">
     (= (num 3) (inc (num 2)))
     </div>
-<h2> Decrementaion </h2>
-<div class="clojure">
-    (dec (num 8))
-    </div>
-    <br/>
-<h2> Addition </h2>
-<div class="clojure">
-    (+ (num 2) (num 3))
-    </div>
-    <br/>
-    
-    <h2> Subtraction </h2>
-<div class="clojure">
-    (- (num 7) (num 3))
-    </div>
-    <br/>
- <h2> Multiplication </h2>
-<div class="clojure">
-    (* (num 2) (num 3))
-    </div>
-    <br/>
-  <h2> Exponentiation </h2>
-<div class="clojure">
-    (** (num 2) (num 3))
-    </div>
-    <br/>
+
 <script>
     window.klipse_settings = {
         selector: '.clojure'
