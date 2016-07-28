@@ -20,3 +20,18 @@
   IFn
   (-invoke [this g]
            (f g)))
+
+(defn view-bool [bool]
+  ((bool "T") "F"))
+
+(deftype LambdaBool [f]
+  Object
+  (toString [_] (str (view-bool f)))
+  IPrintWithWriter
+  (-pr-writer [this writer _] (-write writer (str (view-bool f))))
+  IEquiv
+  (-equiv [this other]
+          (= (view-bool this) (view-bool other)))
+  IFn
+  (-invoke [this g]
+           (f g)))
