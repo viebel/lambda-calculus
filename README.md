@@ -5,3 +5,5 @@ Lambda Calculus in Clojure
 
 
 https://viebel.github.io/lambda-calculus/doc/numerals.html
+
+https://viebel.github.io/lambda-calculus/doc/booleans.html
