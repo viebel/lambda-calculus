@@ -12,9 +12,9 @@ https://raw.githubusercontent.com/viebel/gadjett/master/src/">
 ;https://github.com/viebel/lambda-calculus
 (ns demo.lambda
   (:refer-clojure :exclude [+ - * inc dec])
-  (:require-macros [lambda-calculus.macros :refer [lambda-bool]])
+  (:require-macros [lambda-calculus.macros :refer [lambda-bool]]
+                   [gadjett.macros :refer [disp]])
   (:require 
-    [gadjett.macros :refer [disp]]
     [lambda-calculus.booleans :refer [T F negation]]))
 </div>
 <br/>
