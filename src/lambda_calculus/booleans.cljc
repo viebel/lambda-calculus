@@ -12,6 +12,6 @@
            (fn [y] y))))
            
 (lambda-bool negation [x]
-    ((x F) T)))
+    ((x F) T))
 
       
