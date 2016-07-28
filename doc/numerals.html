@@ -12,7 +12,7 @@
 (ns demo.lambda
   (:refer-clojure :exclude [+ - * inc dec])
   (:require-macros [lambda-calculus.macros :refer [lambda]])
-  (:require [lambda-calculus.numerals :refer [num + - * inc dec]]))
+  (:require [lambda-calculus.numerals :refer [num + - * ** inc dec]]))
 </div>
 <br/>
 
@@ -41,7 +41,7 @@
     </div>
 <h2> Decrementaion </h2>
 <div class="clojure">
-    (inc (num 8))
+    (dec (num 8))
     </div>
     <br/>
 <h2> Addition </h2>
@@ -65,7 +65,6 @@
     (** (num 2) (num 3))
     </div>
     <br/>
-<h1> Booleans </h1>
 <script>
     window.klipse_settings = {
         selector: '.clojure'
