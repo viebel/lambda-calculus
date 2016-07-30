@@ -5,4 +5,5 @@
   `(defn ~name ~args (->Lambda ~@body)))
 
 (defmacro lambda-bool [name args & body]
-  `(defn ~name ~args (->LambdaBool ~@body)))
+  `(def ~name (->LambdaBool
+                (fn ~args (->LambdaBool ~@body)))))
