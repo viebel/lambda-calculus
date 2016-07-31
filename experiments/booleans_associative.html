@@ -110,7 +110,20 @@ Here is the truth table:
 
     </div>
     <br/>
-    
+
+<h1> Combinations </h1>
+
+You can combine `and`, `not` and `or` as you wish. Keep in my that `and` and `or` are 2-arity functions.
+It's not valid to pass to them more than 2 parameters.
+<br/>
+
+But some nested expression like this is completly valid:
+
+<div class="clojure">
+  (and (and T T)
+     (or (and F T)
+         (or (not F) T)))
+</div>
     
 <script>
     window.klipse_settings = {
