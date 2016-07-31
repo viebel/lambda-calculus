@@ -38,5 +38,15 @@
   (-invoke [this g]
            (f g))
   (-invoke [this g h]
-           ((f g) h)))
+           ((f g) h))
+  (-invoke [this g h i]
+           ((f g) h i))
+  (-invoke [this g h i j]
+           ((f g) h i j))
+  (-invoke [this g h i j k]
+           ((f g) h i j k))
+  (-invoke [this g h i j k l]
+           ((f g) h i j k l))
+  (-invoke [this g h i j k l m]
+           ((f g) h i j k l m)))
 
