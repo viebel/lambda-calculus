@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css">
+</head>
+
+<body>
+    <h1> Booleans </h1>
+<div class="clojure" data-external-libs="https://raw.githubusercontent.com/viebel/lambda-calculus/associativity/src/,
+https://raw.githubusercontent.com/viebel/gadjett/master/src/">
+;https://github.com/viebel/lambda-calculus
+(ns demo.lambda
+  (:refer-clojure :exclude [not and or])
+  (:require-macros [lambda-calculus.macros :refer [lambda-bool]]
+                   [gadjett.macros :refer [disp]])
+  (:require 
+    [lambda-calculus.booleans :refer [T F negation not conjunction and disjunction or]]))
+</div>
+<br/>
+
+<p>A boolean <b>n</b> is viewed as either <b>T</b> or <b>F</b>:</p>
+<div class="clojure">
+    [T F T T F]
+    </div>
+    <br/>
+    
+<h2> Comparison</h2>
+<div class="clojure">
+    (= T T)
+    </div>
+
+<div class="clojure">
+    (= T F)
+    </div>
+
+<h2> Negation a.k.a not </h2>
+
+You can use either <b>negation</b> or <b>not</b>.
+<br/>
+Here is the truth table:
+
+<div class="clojure">
+    (disp (negation T)
+          (negation F))
+    </div>
+    <br/>
+
+<div class="clojure">
+    (disp (not T)
+          (not F))
+    </div>
+    <br/>
+
+<h2> Conjunction a.k.a and</h2>
+
+You can use either <b>conjunction</b> or <b>and</b>.
+<br/>
+Here is the truth table:
+
+<div class="clojure">
+    (disp ((conjunction T) T)
+      ((conjunction T) F)
+      ((conjunction F) F)
+      ((conjunction F) T))
+    </div>
+    <br/>
+    
+<div class="clojure">
+    (disp ((and T) T)
+      ((and T) F)
+      ((and F) F)
+      ((and F) T))
+    </div>
+    <br/>
+    
+    
+It is much more convenient to use 2-arity call instead of nested 1-arity calls:
+<div class="clojure">
+    (disp (conjunction T T)
+      (conjunction T F)
+      (conjunction F F)
+      (conjunction F T))
+    </div>
+    <br/>
+
+
+<h2> Disjunction a.k.a or  </h2>
+
+You can use either <b>disjunction</b> or <b>or</b>.
+
+<br/>
+
+Here is the truth table:
+
+<div class="clojure">
+   (disp (disjunction T T)
+      (disjunction T F)
+      (disjunction F F)
+      (disjunction F T))
+
+    </div>
+    <br/>
+    
+    <div class="clojure">
+   (disp (or T T)
+      (or T F)
+      (or F F)
+      (or F T))
+
+    </div>
+    <br/>
+    
+    
+<script>
+    window.klipse_settings = {
+        selector: '.clojure'
+    };
+</script>
+<script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
+
+</body>
+
+</html>
