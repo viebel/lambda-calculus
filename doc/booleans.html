@@ -7,7 +7,7 @@
 
 <body>
     <h1> Booleans </h1>
-<div class="clojure" data-external-libs="https://raw.githubusercontent.com/viebel/lambda-calculus/associativity/src/,
+<div class="clojure" data-external-libs="https://raw.githubusercontent.com/viebel/lambda-calculus/master/src/,
 https://raw.githubusercontent.com/viebel/gadjett/master/src/">
 ;https://github.com/viebel/lambda-calculus
 (ns demo.lambda
@@ -73,17 +73,6 @@ Here is the truth table:
       ((and F) T))
     </div>
     <br/>
-    
-    
-It is much more convenient to use 2-arity call instead of nested 1-arity calls:
-<div class="clojure">
-    (disp (conjunction T T)
-      (conjunction T F)
-      (conjunction F F)
-      (conjunction F T))
-    </div>
-    <br/>
-
 
 <h2> Disjunction a.k.a or  </h2>
 
@@ -94,19 +83,19 @@ You can use either <b>disjunction</b> or <b>or</b>.
 Here is the truth table:
 
 <div class="clojure">
-   (disp (disjunction T T)
-      (disjunction T F)
-      (disjunction F F)
-      (disjunction F T))
+   (disp ((disjunction T) T)
+      ((disjunction T) F)
+      ((disjunction F) F)
+      ((disjunction F) T))
 
     </div>
     <br/>
     
     <div class="clojure">
-   (disp (or T T)
-      (or T F)
-      (or F F)
-      (or F T))
+   (disp ((or T) T)
+      ((or T) F)
+      ((or F) F)
+      ((or F) T))
 
     </div>
     <br/>
