@@ -73,6 +73,17 @@ Here is the truth table:
       ((and F) T))
     </div>
     <br/>
+    
+    
+It is much more convenient to use 2-arity call instead of nested 1-arity calls:
+<div class="clojure">
+    (disp (conjunction T T)
+      (conjunction T F)
+      (conjunction F F)
+      (conjunction F T))
+    </div>
+    <br/>
+
 
 <h2> Disjunction a.k.a or  </h2>
 
@@ -83,23 +94,36 @@ You can use either <b>disjunction</b> or <b>or</b>.
 Here is the truth table:
 
 <div class="clojure">
-   (disp ((disjunction T) T)
-      ((disjunction T) F)
-      ((disjunction F) F)
-      ((disjunction F) T))
+   (disp (disjunction T T)
+      (disjunction T F)
+      (disjunction F F)
+      (disjunction F T))
 
     </div>
     <br/>
     
     <div class="clojure">
-   (disp ((or T) T)
-      ((or T) F)
-      ((or F) F)
-      ((or F) T))
+   (disp (or T T)
+      (or T F)
+      (or F F)
+      (or F T))
 
     </div>
     <br/>
-    
+
+<h1> Combinations </h1>
+
+You can combine `and`, `not` and `or` as you wish. Keep in my that `and` and `or` are 2-arity functions.
+It's not valid to pass to them more than 2 parameters.
+<br/>
+
+But some nested expression like this is completly valid:
+
+<div class="clojure">
+  (and (and T T)
+     (or (and F T)
+         (or (not F) T)))
+</div>
     
 <script>
     window.klipse_settings = {
